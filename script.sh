@@ -11,3 +11,9 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" -y
 sudo apt-get install packer -y
 
+# Download the code for packer ansible integration
+git clone https://github.com/vishal354/packer-ansible-integration.git
+cd packer-ansible-integration/ansible
+
+# How to make it work with packer
+packer init .
