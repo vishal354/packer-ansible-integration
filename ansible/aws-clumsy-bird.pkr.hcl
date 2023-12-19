@@ -4,7 +4,7 @@ packer {
       source  = "github.com/hashicorp/amazon"
       version = "~> 1.2.8"
     }
-    
+
     ansible = {
       version = "~> 1.1.1"
       source  = "github.com/hashicorp/ansible"
@@ -43,8 +43,8 @@ build {
   }
 
   provisioner "ansible" {
-    ansible_env_vars = ["ANSIBLE_HOST_KEY_CHECKING=False", "ANSIBLE_NOCOWS=1"]
-    extra_arguments  = ["--extra-vars", "desktop=false", "-v"]
+    ansible_env_vars = ["ANSIBLE_HOST_KEY_CHECKING=False", "ANSIBLE_COW_SELECTION=random"]
+    extra_arguments  = ["--extra-vars", "desktop=false"]
     playbook_file    = "${path.root}/playbooks/playbook.yml"
     user             = var.ssh_username
   }
