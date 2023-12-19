@@ -27,8 +27,14 @@
   become: true
   when: ansible_os_family == "Debian"
 
+# - name: Update NPM
+#   command: npm install -g npm@latest
+#   become: true
 - name: Update NPM
-  command: npm install -g npm@latest
+  npm:
+    name: npm
+    global: yes
+    state: latest
   become: true
 
 - name: Clone a repo with separate git directory

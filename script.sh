@@ -15,5 +15,11 @@ sudo apt-get install packer -y
 git clone https://github.com/vishal354/packer-ansible-integration.git
 cd packer-ansible-integration/ansible
 
+# Install awscli and setup the access keys using aws configure
+sudo apt install awscli -y
+aws configure
+
 # How to make it work with packer
 packer init .
+packer validate .
+
