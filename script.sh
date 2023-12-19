@@ -41,3 +41,7 @@ aws configure
 packer init .
 packer validate .
 packer build .
+
+# Storing the AMI ID for reference - may not work later
+# us-east-1: ami-06fcb7123cd87b776
+# Update the key_name before running terraform apply

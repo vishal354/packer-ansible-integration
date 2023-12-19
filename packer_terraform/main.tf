@@ -20,7 +20,7 @@ provider "aws" {
 resource "aws_instance" "test_ami" {
   ami           = var.ami
   instance_type = "t2.micro"
-  key_name      = "MyEC2Instance"
+  key_name      = "clumsy-bird-key"
 
   tags = {
     "Name" = var.appname
